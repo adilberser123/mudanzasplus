@@ -42,6 +42,299 @@
   </div>
 </section>
 
+<!-- ===== MOVE QUOTE FORM ===== -->
+<section class="move-form-section">
+  <div class="container">
+    <div class="section-header centered">
+      <div class="section-label">¿Dónde te mudas?</div>
+      <h2 class="section-title">Calcula tu Mudanza</h2>
+      <p class="section-sub">Selecciona el origen y destino y te enviamos un presupuesto gratis por WhatsApp.</p>
+    </div>
+
+    <div class="move-form-box">
+      <form id="move-quote-form">
+
+        <!-- FROM -->
+        <div class="move-form-row">
+          <div class="move-form-group">
+            <label>📍 Origen (desde dónde)</label>
+            <select id="from-place">
+              <option value="">Selecciona origen...</option>
+              <optgroup label="Tarragona Ciudad">
+                <option>Tarragona centro</option>
+                <option>Part Alta</option>
+                <option>Eixample</option>
+                <option>Torreforta</option>
+                <option>Bonavista</option>
+              </optgroup>
+              <optgroup label="Camp de Tarragona">
+                <option>Reus</option>
+                <option>Salou</option>
+                <option>Cambrils</option>
+                <option>Vila-seca</option>
+                <option>La Canonja</option>
+              </optgroup>
+              <optgroup label="Terres de l'Ebre">
+                <option>Tortosa</option>
+                <option>Amposta</option>
+                <option>L'Ametlla de Mar</option>
+                <option>Deltebre</option>
+                <option>Ulldecona</option>
+              </optgroup>
+              <optgroup label="Resto de España">
+                <option>Barcelona</option>
+                <option>Madrid</option>
+                <option>Valencia</option>
+                <option>Zaragoza</option>
+              </optgroup>
+              <option value="otro-origen">Otra ciudad...</option>
+            </select>
+            <!-- shown only if "Otra ciudad" is selected -->
+            <input type="text" id="from-other" placeholder="Escribe tu ciudad" style="display:none; margin-top:8px;">
+          </div>
+
+          <div class="move-form-arrow">→</div>
+
+          <!-- TO -->
+          <div class="move-form-group">
+            <label>🏁 Destino (hacia dónde)</label>
+            <select id="to-place">
+              <option value="">Selecciona destino...</option>
+              <optgroup label="Tarragona Ciudad">
+                <option>Tarragona centro</option>
+                <option>Part Alta</option>
+                <option>Eixample</option>
+                <option>Torreforta</option>
+                <option>Bonavista</option>
+              </optgroup>
+              <optgroup label="Camp de Tarragona">
+                <option>Reus</option>
+                <option>Salou</option>
+                <option>Cambrils</option>
+                <option>Vila-seca</option>
+                <option>La Canonja</option>
+              </optgroup>
+              <optgroup label="Terres de l'Ebre">
+                <option>Tortosa</option>
+                <option>Amposta</option>
+                <option>L'Ametlla de Mar</option>
+                <option>Deltebre</option>
+                <option>Ulldecona</option>
+              </optgroup>
+              <optgroup label="Resto de España">
+                <option>Barcelona</option>
+                <option>Madrid</option>
+                <option>Valencia</option>
+                <option>Zaragoza</option>
+              </optgroup>
+              <option value="otro-destino">Otra ciudad...</option>
+            </select>
+            <input type="text" id="to-other" placeholder="Escribe tu ciudad" style="display:none; margin-top:8px;">
+          </div>
+        </div>
+
+        <!-- TYPE -->
+        <div class="move-form-group">
+          <label>🏠 Tipo de mudanza</label>
+          <div class="move-type-options">
+            <label class="move-type-btn">
+              <input type="radio" name="move-type" value="Piso / Casa" checked>
+              <span>🏠 Piso / Casa</span>
+            </label>
+            <label class="move-type-btn">
+              <input type="radio" name="move-type" value="Oficina">
+              <span>🏢 Oficina</span>
+            </label>
+            <label class="move-type-btn">
+              <input type="radio" name="move-type" value="Local / Empresa">
+              <span>🏭 Local / Empresa</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- NAME + PHONE -->
+        <div class="move-form-row">
+          <div class="move-form-group">
+            <label>👤 Tu nombre</label>
+            <input type="text" id="mq-name" placeholder="Juan García" required>
+          </div>
+          <div class="move-form-group">
+            <label>📞 Tu teléfono</label>
+            <input type="tel" id="mq-phone" placeholder="+34 600 000 000" required>
+          </div>
+        </div>
+
+        <button type="submit" class="submit-btn">
+          Pedir Presupuesto Gratis por WhatsApp 🚀
+        </button>
+
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CSS ===== -->
+<style>
+.move-form-section {
+  padding: 60px 0;
+  background: #f8fafa;
+}
+
+.move-form-box {
+  background: white;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.move-form-row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-end;
+  margin-bottom: 24px;
+}
+
+.move-form-arrow {
+  font-size: 28px;
+  color: #1a7a7a;
+  padding-bottom: 10px;
+  flex-shrink: 0;
+}
+
+.move-form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+
+.move-form-group label {
+  font-weight: 600;
+  font-size: 14px;
+  color: #333;
+}
+
+.move-form-group select,
+.move-form-group input[type="text"],
+.move-form-group input[type="tel"] {
+  padding: 12px 14px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: border-color 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.move-form-group select:focus,
+.move-form-group input:focus {
+  border-color: #1a7a7a;
+  outline: none;
+}
+
+.move-type-options {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.move-type-btn {
+  cursor: pointer;
+}
+
+.move-type-btn input {
+  display: none;
+}
+
+.move-type-btn span {
+  display: inline-block;
+  padding: 10px 18px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.move-type-btn input:checked + span {
+  border-color: #1a7a7a;
+  background: #1a7a7a;
+  color: white;
+}
+
+.move-type-btn:hover span {
+  border-color: #1a7a7a;
+}
+
+@media (max-width: 600px) {
+  .move-form-row {
+    flex-direction: column;
+  }
+  .move-form-arrow {
+    transform: rotate(90deg);
+    text-align: center;
+    padding: 0;
+  }
+  .move-form-box {
+    padding: 24px 16px;
+  }
+}
+</style>
+
+<!-- ===== JS ===== -->
+<script>
+// Show text input when "Otra ciudad" is selected
+document.getElementById('from-place').addEventListener('change', function() {
+  document.getElementById('from-other').style.display =
+    this.value === 'otro-origen' ? 'block' : 'none';
+});
+
+document.getElementById('to-place').addEventListener('change', function() {
+  document.getElementById('to-other').style.display =
+    this.value === 'otro-destino' ? 'block' : 'none';
+});
+
+// Submit → open WhatsApp
+document.getElementById('move-quote-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const fromSelect = document.getElementById('from-place');
+  const toSelect   = document.getElementById('to-place');
+
+  const from = fromSelect.value === 'otro-origen'
+    ? document.getElementById('from-other').value
+    : fromSelect.value;
+
+  const to = toSelect.value === 'otro-destino'
+    ? document.getElementById('to-other').value
+    : toSelect.value;
+
+  const type  = document.querySelector('input[name="move-type"]:checked').value;
+  const name  = document.getElementById('mq-name').value;
+  const phone = document.getElementById('mq-phone').value;
+
+  if (!from || !to) {
+    alert('Por favor selecciona origen y destino.');
+    return;
+  }
+
+  const text =
+    `¡Hola! Me gustaría pedir un presupuesto de mudanza.\n\n` +
+    `📍 Origen: ${from}\n` +
+    `🏁 Destino: ${to}\n` +
+    `🏠 Tipo: ${type}\n` +
+    `👤 Nombre: ${name}\n` +
+    `📞 Teléfono: ${phone}`;
+
+  window.open('https://wa.me/34694201218?text=' + encodeURIComponent(text), '_blank');
+});
+</script>
+<!-- ===== END MOVE QUOTE FORM ===== -->
+
+  
 <section class="contact-section">
   <div class="container">
     <div class="contact-grid">
