@@ -45,6 +45,7 @@
     <nav id="main-nav">
       <a href="index.html" class="active">Inicio</a>
       <a href="services.html">Servicios</a>
+      <a href="request.html">Solicitudt</a>
       <a href="#">Nosotros</a>
       <a href="contact.html" class="nav-cta">Contacto</a>
     </nav>
@@ -69,7 +70,7 @@
       <p>Servicios de mudanza rápidos, seguros y cuidadosos para hogares, oficinas y empresas en Tarragona y toda Cataluña. Tu mudanza, en buenas manos.</p>
       <p class="hero-phone">📞 <a href="tel:+34694201218">+34 694 20 12 18</a></p>
       <div class="hero-btns">
-        <a href="services.html#limpieza" class="btn btn-primary">🧹 Ver Servicios de Limpieza</a>
+        <a href="request.html" class="btn btn-primary">🧹 Realizar una Solicitud</a>
         <a href="services.html" class="btn btn-dark">🚚 Ver Servicios de Mudanza</a>
       </div>
     </div>
@@ -365,6 +366,18 @@ function sendWhatsApp(){const m=document.getElementById("waMessage").value;windo
 const hamburger=document.getElementById('hamburger');
 const nav=document.getElementById('main-nav');
 hamburger.addEventListener('click',()=>nav.classList.toggle('open'));
+</script>
+<script>
+document.querySelectorAll('.area-column li').forEach(item => {
+  item.style.cursor = 'pointer';
+
+  item.addEventListener('click', () => {
+    const city = item.textContent.trim();
+
+    // redirect with selected city
+    window.location.href = `request.html?destino=${encodeURIComponent(city)}`;
+  });
+});
 </script>
 </body>
 </html>
