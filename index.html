@@ -289,8 +289,8 @@
     </div>
     <div class="areas-cta">
       <h2>Need a Move Anywhere in Spain?</h2>
-      <p>Call us or send a message — we'll provide a free quote within hours.</p>
-      <a href="contact.html" class="btn btn-primary">📋 Get a Free Quote</a>
+      <p><p>Call us or send a message for more details and special moving offers.</p></p>
+      <a href="contact.html" class="btn btn-primary">📋 Contact Us</a>
     </div>
   </div>
 </section>
@@ -474,6 +474,30 @@ const hamburger = document.getElementById('hamburger');
 const nav = document.getElementById('main-nav');
 hamburger.addEventListener('click', () => nav.classList.toggle('open'));
 </script>
-  
+  <!-- Google Translate -->
+<div id="google_translate_element"></div>
+
+<style>
+#google_translate_element{
+    position:fixed;
+    top:15px;
+    right:20px;
+    z-index:99999;
+    background:white;
+    padding:8px;
+    border-radius:10px;
+}
+</style>
+
+<script>
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    includedLanguages: 'en,es,ar'
+  }, 'google_translate_element');
+}
+</script>
+
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
