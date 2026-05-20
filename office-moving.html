@@ -59,6 +59,44 @@
     <div class="footer-bottom"><span>© 2026 MudanzasPro. All rights reserved.</span></div>
   </div>
 </footer>
+  <!-- WhatsApp Floating Button -->
+<a href="https://wa.me/34694201218" 
+   class="whatsapp-float" 
+   target="_blank"
+   aria-label="Chat on WhatsApp">
+   
+   <svg xmlns="http://www.w3.org/2000/svg" 
+        viewBox="0 0 32 32" 
+        width="30" 
+        height="30" 
+        fill="white">
+      <path d="M19.11 17.93c-.29-.15-1.7-.84-1.96-.94-.26-.1-.45-.15-.64.15-.19.29-.74.94-.91 1.13-.17.19-.34.22-.63.07-.29-.15-1.24-.46-2.36-1.46-.87-.78-1.46-1.74-1.63-2.03-.17-.29-.02-.45.13-.6.13-.13.29-.34.43-.51.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.15-.64-1.55-.88-2.12-.23-.56-.47-.48-.64-.49h-.55c-.19 0-.51.07-.78.36-.26.29-1 1-.1 2.43.9 1.43 2.57 3.15 6.2 4.42.86.3 1.53.48 2.06.61.87.22 1.66.19 2.29.12.7-.08 1.7-.69 1.94-1.35.24-.66.24-1.22.17-1.35-.07-.12-.26-.19-.55-.34zM16.01 3C8.83 3 3 8.82 3 16c0 2.54.74 5.02 2.13 7.15L3 29l5.99-2.09A12.94 12.94 0 0016.01 29C23.18 29 29 23.18 29 16S23.18 3 16.01 3zm0 23.67c-2.17 0-4.29-.58-6.15-1.68l-.44-.26-3.56 1.24 1.19-3.47-.29-.45A10.64 10.64 0 015.33 16c0-5.88 4.79-10.67 10.68-10.67 2.85 0 5.53 1.11 7.55 3.13A10.6 10.6 0 0126.68 16c0 5.89-4.79 10.67-10.67 10.67z"/>
+   </svg>
+</a>
+
+<style>
+.whatsapp-float {
+    position: fixed;
+    width: 65px;
+    height: 65px;
+    bottom: 25px;
+    right: 25px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    z-index: 9999;
+    transition: 0.3s ease;
+    text-decoration: none;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    background: #20ba5a;
+}
+</style>
 <script>
 const hamburger = document.getElementById('hamburger');
 const nav = document.getElementById('main-nav');
