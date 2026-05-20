@@ -119,44 +119,134 @@
     <div class="footer-bottom"><span>© 2026 MudanzasPro. All rights reserved.</span></div>
   </div>
 </footer>
-  <!-- WhatsApp Floating Button -->
-<a href="https://wa.me/34694201218" 
-   class="whatsapp-float" 
-   target="_blank"
-   aria-label="Chat on WhatsApp">
-   
-   <svg xmlns="http://www.w3.org/2000/svg" 
-        viewBox="0 0 32 32" 
-        width="30" 
-        height="30" 
-        fill="white">
-      <path d="M19.11 17.93c-.29-.15-1.7-.84-1.96-.94-.26-.1-.45-.15-.64.15-.19.29-.74.94-.91 1.13-.17.19-.34.22-.63.07-.29-.15-1.24-.46-2.36-1.46-.87-.78-1.46-1.74-1.63-2.03-.17-.29-.02-.45.13-.6.13-.13.29-.34.43-.51.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.15-.64-1.55-.88-2.12-.23-.56-.47-.48-.64-.49h-.55c-.19 0-.51.07-.78.36-.26.29-1 1-.1 2.43.9 1.43 2.57 3.15 6.2 4.42.86.3 1.53.48 2.06.61.87.22 1.66.19 2.29.12.7-.08 1.7-.69 1.94-1.35.24-.66.24-1.22.17-1.35-.07-.12-.26-.19-.55-.34zM16.01 3C8.83 3 3 8.82 3 16c0 2.54.74 5.02 2.13 7.15L3 29l5.99-2.09A12.94 12.94 0 0016.01 29C23.18 29 29 23.18 29 16S23.18 3 16.01 3zm0 23.67c-2.17 0-4.29-.58-6.15-1.68l-.44-.26-3.56 1.24 1.19-3.47-.29-.45A10.64 10.64 0 015.33 16c0-5.88 4.79-10.67 10.68-10.67 2.85 0 5.53 1.11 7.55 3.13A10.6 10.6 0 0126.68 16c0 5.89-4.79 10.67-10.67 10.67z"/>
-   </svg>
-</a>
+<!-- WhatsApp Chat Widget -->
+<div class="wa-chat-box" id="waChatBox">
+  
+  <div class="wa-header">
+    SERVICIALIA MOVING
+    <span onclick="toggleChat()">×</span>
+  </div>
+
+  <div class="wa-body">
+    <div class="wa-message">
+      Hi! How can we help you?
+    </div>
+
+    <textarea id="waMessage" placeholder="Escribe tu mensaje..."></textarea>
+
+    <button onclick="sendWhatsApp()">➤</button>
+  </div>
+</div>
+
+<!-- Floating Button -->
+<div class="wa-floating" onclick="toggleChat()">
+  💬
+</div>
 
 <style>
-.whatsapp-float {
-    position: fixed;
-    width: 65px;
-    height: 65px;
-    bottom: 25px;
-    right: 25px;
-    background: #25D366;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-    z-index: 9999;
-    transition: 0.3s ease;
-    text-decoration: none;
+.wa-floating{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    width:65px;
+    height:65px;
+    background:#25D366;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    font-size:32px;
+    cursor:pointer;
+    z-index:9999;
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
 }
 
-.whatsapp-float:hover {
-    transform: scale(1.1);
-    background: #20ba5a;
+.wa-chat-box{
+    position:fixed;
+    bottom:100px;
+    right:20px;
+    width:320px;
+    background:#f1f1f1;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 5px 25px rgba(0,0,0,0.3);
+    z-index:9999;
+    display:none;
+    font-family:Arial,sans-serif;
+}
+
+.wa-header{
+    background:#25D366;
+    color:white;
+    padding:15px;
+    font-weight:bold;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.wa-header span{
+    cursor:pointer;
+    font-size:22px;
+}
+
+.wa-body{
+    padding:15px;
+}
+
+.wa-message{
+    background:white;
+    padding:12px;
+    border-radius:8px;
+    margin-bottom:15px;
+    color:#555;
+}
+
+.wa-body textarea{
+    width:100%;
+    height:80px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    padding:10px;
+    resize:none;
+    font-size:14px;
+}
+
+.wa-body button{
+    margin-top:10px;
+    width:100%;
+    background:#25D366;
+    border:none;
+    color:white;
+    padding:12px;
+    border-radius:8px;
+    font-size:18px;
+    cursor:pointer;
 }
 </style>
+
+<script>
+function toggleChat() {
+    const box = document.getElementById("waChatBox");
+
+    if(box.style.display === "block"){
+        box.style.display = "none";
+    } else {
+        box.style.display = "block";
+    }
+}
+
+function sendWhatsApp() {
+    let message = document.getElementById("waMessage").value;
+
+    let phone = "34694201218";
+
+    let url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+
+    window.open(url, "_blank");
+}
+</script>
 
 <script>
 const hamburger = document.getElementById('hamburger');
